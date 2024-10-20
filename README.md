@@ -11,3 +11,5 @@ just write it in the THINGS TO DO argument and it will be removed from the list.
 ex `todo-rs todo.txt code-something`
 ### To check the list
 run the command `todo-rs todo.txt`
+# If you want to have the command accessible
+put the directory that you have todo-rs in your system's PATH variable
