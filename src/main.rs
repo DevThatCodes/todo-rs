@@ -1,5 +1,5 @@
 use core::str;
-use std::{env::{self}, fs};
+use std::{env::{self}, fs, process::exit};
 
 fn main() {
     // todo-rs -req[FILENAME (ex. todolist.txt)] -opt[TODO THINGS (ex. code-something,code-something-else)]
@@ -7,9 +7,21 @@ fn main() {
     // -req = required argument
     // -opt = optional argument
 
+    // DONE: add error handling
+
     let args : Vec<String> = env::args().collect();
-    let todo_file_path = args[1].clone();
-    let todo_file_content = fs::read_to_string(&todo_file_path).expect("Couldn't open file!");
+    // DONE: added error handling for if there is the FILENAME argument exists
+    let todo_file_path = if args.len() > 1 {
+        args[1].clone()
+    } else {
+        println!("[ERROR] Enter the filename of the todolist (ex. todo-rs important-todos.txt)");
+        exit(1);
+    };
+    // DONE: added error handling for if the file exists or not
+    let todo_file_content = match fs::read_to_string(&todo_file_path) {
+        Ok(file_content) => {file_content}
+        Err(..) => {println!("[ERROR] Enter a valid file"); exit(1);}
+    };
     
     let mut todo_file : Vec<&str> = Vec::new();
     todo_file_content.lines().for_each(|line| todo_file.push(line));
@@ -20,18 +32,8 @@ fn main() {
         args[2].split(",").for_each(|string| todo_things.push(string));
     }
 
-    // PARTIAL: for each thing in TODO THINGS check if its already in FILENAME. If so, remove it from
+    // DONE: for each thing in TODO THINGS check if its already in FILENAME. If so, remove it from
     // the file. Otherwise, add it to the file
-    //
-    // BUG: if a thing to be removed appears first, and once removed the file is empty, anything
-    // after that is ignored (ex. 
-    //
-    //  todo.txt:
-    //  |thing
-    //
-    //  todo-rs todo.txt thing,other-thing => makes todo.txt empty instead of having other-thing in
-    //  it
-    // )
 
     for thing in todo_things {
         if todo_file.contains(&thing) {

@@ -15,4 +15,3 @@ ex `todo-rs todo.txt code-something`
 run the command `todo-rs todo.txt`
 # If you want to have the command accessible
 put the directory that you have todo-rs in your system's PATH variable
-
