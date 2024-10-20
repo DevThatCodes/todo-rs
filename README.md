@@ -9,5 +9,5 @@ ex: `todo-rs todo.txt code-something,eat-a-snack`
 ### To remove things from the list
 just write it in the THINGS TO DO argument and it will be removed from the list.<br>
 ex `todo-rs todo.txt code-something`
-### To just check the list
+### To check the list
 run the command `todo-rs todo.txt`
