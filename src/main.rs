@@ -1,5 +1,5 @@
 use core::str;
-use std::{env, fs};
+use std::{env::{self}, fs};
 
 fn main() {
     // todo-rs -req[FILENAME (ex. todolist.txt)] -opt[TODO THINGS (ex. code-something,code-something-else)]
@@ -16,7 +16,7 @@ fn main() {
 
     let mut todo_things : Vec<&str> = Vec::new();
     // DONE: check if TODO THINGS arg exists. If so, split it into a vec by commas 
-    if args.len() > 2 {
+    if args.len() > 2 && args[2]!="--fancy" {
         args[2].split(",").for_each(|string| todo_things.push(string));
     }
 
@@ -42,5 +42,12 @@ fn main() {
     }
 
     fs::write(todo_file_path.clone(), todo_file.join("\n")).unwrap();
-    println!("{}", fs::read_to_string(todo_file_path).expect("File Couldn't open!"))
+    if args.contains(&"--fancy".to_string()) {
+        println!("{}",todo_file_path.clone());
+        for ele in todo_file {
+            println!(" - {ele}");
+        }
+    } else {
+        println!("{}", fs::read_to_string(todo_file_path).expect("File Couldn't open!"))
+    }
 }
