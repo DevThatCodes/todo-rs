@@ -1,5 +1,5 @@
 use core::str;
-use std::{env::{self}, fs, process::exit};
+use std::{env::{self}, fs::{self, File}, process::exit};
 
 fn main() {
     // todo-rs -req[FILENAME (ex. todolist.txt)] -opt[TODO THINGS (ex. code-something,code-something-else)]
@@ -17,10 +17,13 @@ fn main() {
         println!("[ERROR] Enter the filename of the todolist (ex. todo-rs important-todos.txt)");
         exit(1);
     };
-    // DONE: added error handling for if the file exists or not
+    // DONE: added error handling for if the file exists or #![no_std]
+    if args.contains(&"--new".to_string()) {
+        let _ = File::create(todo_file_path.clone());
+    }
     let todo_file_content = match fs::read_to_string(&todo_file_path) {
         Ok(file_content) => {file_content}
-        Err(..) => {println!("[ERROR] Enter a valid file"); exit(1);}
+        Err(..) => {println!("[ERROR] Enter a valid file, maybe you meant to create a new todolist with the --new flag?"); exit(1);}
     };
     
     let mut todo_file : Vec<&str> = Vec::new();
@@ -28,7 +31,7 @@ fn main() {
 
     let mut todo_things : Vec<&str> = Vec::new();
     // DONE: check if TODO THINGS arg exists. If so, split it into a vec by commas 
-    if args.len() > 2 && args[2]!="--fancy" {
+    if args.len() > 2 && args[2]!="--fancy" && args[2]!="--new" {
         args[2].split(",").for_each(|string| todo_things.push(string));
     }
 
