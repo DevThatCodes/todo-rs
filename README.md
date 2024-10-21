@@ -1,6 +1,6 @@
 # What todo-rs is
 todo-rs is a small CLI todo list manager that uses files as todo lists. <br>
-**NOTE: there is currently only a linux version, i plan on adding a windows and mac os version next release**
+**NOTE: there is currently only a linux and a windows version. I don't plan on adding a mac os version, if you want to use this on mac os, you will have to build it from source**
 # How to download
 get the latest todo-rs version here: https://github.com/DevThatCodes/todo-rs/releases/latest
 # How to use
