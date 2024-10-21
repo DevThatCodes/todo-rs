@@ -10,17 +10,17 @@ arguments marked by -req are required. Similarly, arguments marked by -opt are o
  - `--fancy`: makes the list look better
  - `--new`: makes a new todolist
 ### To check the list
-run the command `./todo-rs todo-list`
+run the command `./todo-rs [FILENAME]` where `[FILENAME]` is equal to the path of the todo-list file.
 ![2024-10-21-16-52-34](https://github.com/user-attachments/assets/70c4a268-5027-4516-85a6-c81f2810b6f6)
 
 ### To add things to the list
 write it with no spaces and each thing to add to the list seperated by commas.<br>
-ex: `./todo-rs todo-list code-something,eat-a-snack`
+ex: `./todo-rs [FILENAME] [THING-TO-ADD]` where `[FILENAME]` is equal to the path of the todo-list file, and `[THING-TO-ADD]` is equal to the name of the thing you want to add to the list. **NOTE: make sure the name of the thing to add doesn't have any spaces, otherwise it will not work**
 ![2024-10-21-17-02-55](https://github.com/user-attachments/assets/625315ce-2fae-43e5-afef-1f32c8ba91b7)
 
 ### To remove things from the list
 just write it in the THINGS TO DO argument and it will be removed from the list.<br>
-ex `./todo-rs todo-list code-something`
+ex `./todo-rs [FILENAME] [THING-TO-REMOVE]` where `[FILENAME]` is equal to the path of the todo-list file, and `[THING-TO-REMOVE]` is equal to the name of the thing you want to remove from the list.
 ![2024-10-21-17-03-58](https://github.com/user-attachments/assets/42340b41-9b40-48c5-a78c-5f3a4b1abb24)
 
 # If you want to have the command accessible
