@@ -24,3 +24,7 @@ ex `./todo-rs todo-list code-something`
 
 # If you want to have the command accessible
 put the directory that you have todo-rs in your system's PATH variable
+
+# Troubleshooting
+### If you get a permission denied error
+run the command `chmod +x todo-rs` to give the executable permission to the file
