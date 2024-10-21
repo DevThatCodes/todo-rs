@@ -8,6 +8,7 @@ run the command: `./todo-rs -req[FILENAME] -opt[THINGS TO DO] -opt[FLAGS]`.
 arguments marked by -req are required. Similarly, arguments marked by -opt are optional.
 #### Current Flags:
  - `--fancy`: makes the list look better
+ - `--new`: makes a new todolist
 ### To check the list
 run the command `./todo-rs todo-list`
 ![2024-10-21-16-52-34](https://github.com/user-attachments/assets/70c4a268-5027-4516-85a6-c81f2810b6f6)
