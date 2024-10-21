@@ -1,5 +1,7 @@
 # What todo-rs is
 todo-rs is a small CLI todo list manager that uses files as todo lists.
+# How to download
+get the latest todo-rs version here: https://github.com/DevThatCodes/todo-rs/releases/latest
 # How to use
 run the command: `./todo-rs -req[FILENAME] -opt[THINGS TO DO] -opt[FLAGS]`.
 arguments marked by -req are required. Similarly, arguments marked by -opt are optional.
