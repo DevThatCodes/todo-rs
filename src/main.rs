@@ -32,7 +32,7 @@ fn main() {
     let mut todo_things : Vec<&str> = Vec::new();
     // DONE: check if TODO THINGS arg exists. If so, split it into a vec by commas 
     if args.len() > 2 && args[2]!="--fancy" && args[2]!="--new" {
-        args[2].split(",").for_each(|string| todo_things.push(string));
+        args[2].split("|").for_each(|string| todo_things.push(string));
     }
 
     // DONE: for each thing in TODO THINGS check if its already in FILENAME. If so, remove it from
