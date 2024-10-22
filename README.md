@@ -2,7 +2,7 @@
 todo-rs is a small CLI todo list manager that uses files as todo lists. <br>
 **NOTE: there is currently only a linux and a windows version, And i am aware of the issue where microsoft thinks the windows version is a virus. I don't plan on adding a mac os version, if you want to use this on mac os, you will have to build it from source**
 # How to download
-get the latest todo-rs version here: https://github.com/DevThatCodes/todo-rs/releases/latest
+get the latest todo-rs version [here](https://github.com/DevThatCodes/todo-rs/releases/latest)
 # How to use
 run the command: `./todo-rs -req[FILENAME] -opt[THINGS TO DO] -opt[FLAGS]`.
 arguments marked by -req are required. Similarly, arguments marked by -opt are optional.
@@ -27,5 +27,7 @@ ex `./todo-rs [FILENAME] [THING-TO-REMOVE]` where `[FILENAME]` is equal to the p
 put the directory that you have todo-rs in your system's PATH variable
 
 # Troubleshooting
-### If you get a permission denied error
+### Linux: If you get a permission denied error
 run the command `chmod +x todo-rs` to give the executable permission to the file
+### Linux: If you get an error like this `bash: ./todo-rs: Is a directory`
+you most likely cloned the git repository, download the todo-rs file from [here](https://github.com/DevThatCodes/todo-rs/releases/latest)
