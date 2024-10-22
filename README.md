@@ -14,8 +14,8 @@ run the command `./todo-rs [FILENAME]` where `[FILENAME]` is equal to the path o
 ![2024-10-21-16-52-34](https://github.com/user-attachments/assets/70c4a268-5027-4516-85a6-c81f2810b6f6)
 
 ### To add things to the list
-write it with no spaces and each thing to add to the list seperated by commas.<br>
-ex: `./todo-rs [FILENAME] [THING-TO-ADD]` where `[FILENAME]` is equal to the path of the todo-list file, and `[THING-TO-ADD]` is equal to the name of the thing you want to add to the list. **NOTE: make sure the name of the thing to add doesn't have any spaces, otherwise it will not work**
+write it with no spaces and each thing to add to the list seperated by hyphens.<br>
+ex: `./todo-rs [FILENAME] [THING-TO-ADD]` where `[FILENAME]` is equal to the path of the todo-list file, and `[THING-TO-ADD]` is equal to the name of the thing you want to add to the list.<br> **NOTE: make sure the name of the thing to add doesn't have any spaces, otherwise it will not work. alternatively you can put the things in single quotes to use spaces**
 ![2024-10-21-17-02-55](https://github.com/user-attachments/assets/625315ce-2fae-43e5-afef-1f32c8ba91b7)
 
 ### To remove things from the list
