@@ -28,6 +28,6 @@ put the directory that you have todo-rs in your system's PATH variable
 
 # Troubleshooting
 ### Linux: If you get a permission denied error
-run the command `chmod +x todo-rs` to give the executable permission to the file
+run the command `chmod +x todo-rs` to give the executable permissions to the file
 ### Linux: If you get an error like this `bash: ./todo-rs: Is a directory`
 you most likely cloned the git repository, download the todo-rs file from [here](https://github.com/DevThatCodes/todo-rs/releases/latest)
