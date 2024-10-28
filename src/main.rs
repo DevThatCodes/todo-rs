@@ -1,6 +1,8 @@
 use core::str;
 use std::{env::{self}, fs::{self, File}, process::exit};
 
+
+
 fn main() {
     // todo-rs -req[FILENAME (ex. todolist.txt)] -opt[TODO THINGS (ex. code-something,code-something-else)]
     //
@@ -31,7 +33,7 @@ fn main() {
 
     let mut todo_things : Vec<&str> = Vec::new();
     // DONE: check if TODO THINGS arg exists. If so, split it into a vec by commas 
-    if args.len() > 2 && args[2]!="--fancy" && args[2]!="--new" {
+    if args.len() > 2 && args[2]!="--not-fancy" && args[2]!="--new" {
         args[2].split("~").for_each(|string| todo_things.push(string));
     }
 
@@ -47,7 +49,7 @@ fn main() {
     }
 
     fs::write(todo_file_path.clone(), todo_file.join("\n")).unwrap();
-    if args.contains(&"--fancy".to_string()) {
+    if !args.contains(&"--not-fancy".to_string()) {
         println!("{}",todo_file_path.clone());
         for ele in todo_file {
             println!(" - {ele}");
