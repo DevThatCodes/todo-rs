@@ -2,7 +2,10 @@ use core::str;
 use std::{env::{self}, fs::{self, File}, process::exit};
 use colored::Colorize;
 
-
+//#[derive(Debug)]
+//struct Name {
+//    color:  
+//}
 
 fn main() {
     // todo-rs -req[FILENAME (ex. todolist.txt)] -opt[TODO THINGS (ex. code-something,code-something-else)]
@@ -17,7 +20,7 @@ fn main() {
     let todo_file_path = if args.len() > 1 {
         args[1].clone()
     } else {
-        println!("[ERROR] Enter the filename of the todolist (ex. todo-rs important-todos.txt)");
+        println!("{} Enter the filename of the todolist (ex. todo-rs important-todos.txt)", "[ERROR]".red());
         exit(1);
     };
     // DONE: added error handling for if the file exists or #![no_std]
@@ -53,7 +56,7 @@ fn main() {
     if !args.contains(&"--not-fancy".to_string()) {
         println!("{}",todo_file_path.clone());
         for ele in todo_file {
-            println!(" - {ele}");
+            println!("{}", format!(" - {ele}").red());
         }
     } else {
         println!("{}", fs::read_to_string(todo_file_path).expect("File Couldn't open!"))
